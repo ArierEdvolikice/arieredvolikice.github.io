@@ -27,7 +27,12 @@
 }
 .like{
     filter: grayscale(100%);
+    text-align:right;
+    text-align: right;
 }
 .like:hover{
     filter: grayscale(0%);
+}
+.socialbox{
+    padding-top:40px;
 }

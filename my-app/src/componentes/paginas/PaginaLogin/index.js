@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import {Container,Stack} from 'react-bootstrap';
 import { auth } from "./../../../firebase-config";
-
+import 'bootstrap';
 import {createUserWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
@@ -66,7 +66,7 @@ const Login = ()=>{
         <h1>LOGIN</h1>
         </div>
         <Container><Stack gap={3}>
-            <div>
+            <div className="box" >
                 <h0>Registre-se:</h0>
                 <div class="form-group" classname="Área de E-mail.">
                     <label for="inputEmailRegistro" classname="Campo de E-mail.">Endereço de E-mail</label>

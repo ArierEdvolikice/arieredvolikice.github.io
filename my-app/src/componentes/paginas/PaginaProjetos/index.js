@@ -26,6 +26,11 @@ const Projetos = ()=>{
         <p><img height={300}  src={imgnoticia}></img><br/><br/>
         Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
         </p>
+        {//Div com interações LIKE e COMENTARIO//
+        }
+        <div className="socialbox">
+        <img className="like" alt="Imagem de um coração cor-de-rosa com um símbolo que significa 'coração'.Clique para curtir a postagem." width={45} src={imglike}></img> <p> 0 Curtidas</p>
+        </div>
         </div>
         <div className="noticia">
         {//Titulo da noticia///
@@ -36,10 +41,10 @@ const Projetos = ()=>{
         }
         <p><img height={400} src={imgnoticia2}></img><br/><br/>
         Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua        </p>
-        {//Div com interações//
+        {//Div com interações LIKE e COMENTARIO//
         }
-        <div>
-        <img className="like" width={50} src={imglike}></img> <p> 0 Curtidas</p>
+        <div className="socialbox">
+        <img className="like" alt="Imagem de um coração cor-de-rosa com um símbolo que significa 'coração'.Clique para curtir a postagem." width={45} src={imglike}></img> <p> 0 Curtidas</p>
         </div>
         </div>
         
