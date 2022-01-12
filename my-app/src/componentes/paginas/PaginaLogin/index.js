@@ -62,6 +62,9 @@ const Login = ()=>{
         {
             ////////////////////////////////////REGISTRE-SE//////////////////////////////
         }
+        <div className="pagdescription" >
+        <h1>LOGIN</h1>
+        </div>
         <Container><Stack gap={3}>
             <div>
                 <h0>Registre-se:</h0>

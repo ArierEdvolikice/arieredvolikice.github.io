@@ -1,0 +1,9 @@
+.pagdescription{
+    align-items: center;
+    border:0px;
+    padding: 30px;
+    border-radius: 0px;
+    text-align: center;
+    background-color: rgba(238, 238, 238, 0);
+    font-size: 80px;
+}

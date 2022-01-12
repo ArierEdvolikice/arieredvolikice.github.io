@@ -13,13 +13,13 @@ function Cards() {
               src='/imagens/IMAGEM_PROJETO_01.PNG'
               text='Lorem, ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
               label='Descrever o tema aqui'
-              path='/services'
+              path='/projetos'
             />
             <CardItem
               src='/imagens/IMAGEM_PROJETO_02.PNG'
               text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
               label='Descrever o tema aqui'
-              path='/services'
+              path='/projetos'
             />
           </ul>
           <ul className='cards__items'>
@@ -27,19 +27,19 @@ function Cards() {
               src='/imagens/IMAGEM_PROJETO_03.PNG'
               text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
               label='Descrever o tema aqui'
-              path='/services'
+              path='/projetos'
             />
             <CardItem
               src='/imagens/IMAGEM_PROJETO_01.PNG'
               text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
               label='Descrever o tema aqui'
-              path='/products'
+              path='/projetos'
             />
             <CardItem
               src='/imagens/IMAGEM_PROJETO_01.PNG'
               text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
               label='Descrever o tema aqui'
-              path='/sign-up'
+              path='/projetos'
             />
           </ul>
         </div>
