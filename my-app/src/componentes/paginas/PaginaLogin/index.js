@@ -6,10 +6,12 @@ import 'bootstrap';
 import {createUserWithEmailAndPassword,
     onAuthStateChanged,
     signOut,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
 } from 'firebase/auth'; //importando dependencias de autenticacao do Google Firebase.
 //Importando a variavel que lida com o auth criada no firebase-config
-
+import imguser from './../../Navbar/none.png';
 const Login = ()=>{
     //construtores
     const [registerEmail,setRegisterEmail] = useState("");
@@ -25,6 +27,7 @@ const Login = ()=>{
     })
 
     //funcoes principais
+    
     const register = async ()=>{
         try{ //Tentar criar a conta
             //Cria o "user" e envia para o firebase o valor dessa constante.
@@ -32,8 +35,12 @@ const Login = ()=>{
             auth,
             registerEmail,
             registerPassword);
-            console.log(user);
-            console.log(auth.currentUser.email);
+            ///console.log(user);
+            ///
+            ///console.log(auth.currentUser.email);
+            ///console.log(auth.currentUser.photoURL);
+            ///console.log(auth.currentUser.displayName);
+            //console.log(auth.currentUser.emailVerified);
         } //lidando com erros 
         catch (error){
             console.log(error.message);
@@ -46,8 +53,8 @@ const Login = ()=>{
             auth,
             loginEmail,
             loginPassword);
-            console.log(user);
-            console.log(auth.currentUser.email);
+            ///console.log(user);
+            ///console.log(auth.currentUser.email);
         } //lidando com erros 
         catch (error){
             console.log(error.message);
@@ -112,9 +119,13 @@ const Login = ()=>{
         {/////////////// BOTAO BASICO DE LOGOUT QUE DEPOIS SERA ADAPTADO//////////////////////////////
         }
         
-        <button type="button" onClick={logout} class="btn btn-danger">Sair</button>
- 
-        <p>E-mail:</p> {user?.email}
+        {user? <img src={user.photoURL}/> :<img src={imguser}></img>}<br/>
+        <p>Nome:  {user?.displayName}<br/>
+        E-mail: {user?.email}<br/>
+        Data de criação:  {user?.creationTime}</p><br/>
+        <button type="button" class="btn btn-secondary">Mudar senha</button><br/>
+        <button type="button" onClick={logout} class="btn btn-danger">Sair</button><br/>
+        
         </div>
         </Stack></Container>
             </>
@@ -122,4 +133,5 @@ const Login = ()=>{
     );
     
 };
+
 export default Login;
