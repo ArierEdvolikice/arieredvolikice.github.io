@@ -9,10 +9,14 @@ import {createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
+    signInWithRedirect,
 } from 'firebase/auth'; //importando dependencias de autenticacao do Google Firebase.
 //Importando a variavel que lida com o auth criada no firebase-config
 import imguser from './../../Navbar/none.png';
-const Login = ()=>{
+
+const GoogleProvider = new GoogleAuthProvider();
+
+function Login(){
     //construtores
     const [registerEmail,setRegisterEmail] = useState("");
     const [registerPassword,setRegisterPassword] = useState("");
@@ -63,19 +67,54 @@ const Login = ()=>{
     const logout = async ()=>{
         await signOut(auth);
     };
+    
     return(
-        
-        <>
-        {
-            ////////////////////////////////////REGISTRE-SE//////////////////////////////
-        }
-        <div className="pagdescription" >
-        <h1>LOGIN</h1>
+    <><div className="pagdescription">
+            <h1>LOGIN</h1>
         </div>
-        <Container><Stack gap={3}>
-            <div className="box" >
-                <h0>Registre-se:</h0>
-                <div class="form-group" classname="Área de E-mail.">
+        <div className="box">
+
+
+
+                {user?
+                    <div id="painel_user">{user ? <img className='fotinha' src={user.photoURL} /> : <img src={imguser}></img>}<br />
+                    <p>Nome: {user?.displayName}<br />
+                        E-mail: {user?.email}<br />
+                        Data de criação: {user?.creationTime}</p><br />
+                    <button type="button" class="btn btn-secondary">Mudar senha</button><br />
+                    <button type="button" onClick={logout} class="btn btn-danger">Sair</button><br /></div>
+                    :
+                    <><p>{}</p><div id="login" class="form-group" classname="Área de E-mail."><h0>Faça Login:</h0><br />
+                        <label for="inputEmailLogin" classname="Campo de E-mail.">Endereço de E-mail</label>
+                        <input onChange={(event) => {
+                            //Usa o react useState p/ guardar modificações no target desse input.
+                            //Email do Login.
+                            setLoginEmail(event.target.value);
+                        } } type="email" class="form-control" id="inputEmailRegistro" aria-describedby="emailHelp" placeholder="Seu E-mail" />
+                    </div><div class="form-group" classname="Área de senha">
+                            <label for="senha1" classname="Primeiro Campo de Senha.">Senha:</label>
+                            <input onChange={(event) => {
+                                //Usa o react useState p/ guardar modificações no target desse input.
+                                //Senha do Login.
+                                setLoginPassword(event.target.value);
+                            } } type="password" class="form-control" id="senha1" placeholder="Sua senha" />
+                            <button type="submit" onClick={login} class="btn btn-primary">Entrar</button>
+                            <p>Ainda não possui conta?<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Cadastre-se
+                            </button></p><br />
+                            <button onClick={() => { signInWithRedirect(auth, GoogleProvider); } }>Entrar com Google</button>
+                        </div></>
+                    
+                    }
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="form-group" classname="Área de E-mail."><h0>Registre-se:</h0><br />
                     <label for="inputEmailRegistro" classname="Campo de E-mail.">Endereço de E-mail</label>
                     <input onChange={(event) => {
                         //Usa o react useState p/ guardar modificações no target desse input.
@@ -83,7 +122,6 @@ const Login = ()=>{
                         setRegisterEmail(event.target.value);
                     } } type="email" class="form-control" id="inputEmailRegistro" aria-describedby="emailHelp" placeholder="Seu E-mail" />
                 </div>
-
                 <div class="form-group" classname="Área de senha">
                     <label for="senha1" classname="Primeiro Campo de Senha.">Senha:</label>
                     <input onChange={(event) => {
@@ -92,44 +130,16 @@ const Login = ()=>{
                         setRegisterPassword(event.target.value);
                     } } type="password" class="form-control" id="senha1" placeholder="Sua senha" />
                 </div>
-                <button type="submit" onClick={register} class="btn btn-primary">Criar Conta</button>
-                <button type="submit" onClick={login} class="btn btn-primary">Entrar</button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" onClick={register} data-bs-dismiss="modal" class="btn btn-primary">Criar Conta</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div></>
 
-            <h0>Faça Login:</h0>
-
-            <div class="form-group" classname="Área de E-mail.">
-                    <label for="inputEmailLogin" classname="Campo de E-mail.">Endereço de E-mail</label>
-                    <input onChange={(event) => {
-                        //Usa o react useState p/ guardar modificações no target desse input.
-                        //Email do Login.
-                        setLoginEmail(event.target.value);
-                    } } type="email" class="form-control" id="inputEmailRegistro" aria-describedby="emailHelp" placeholder="Seu E-mail" />
-                </div>
-
-                <div class="form-group" classname="Área de senha">
-                    <label for="senha1" classname="Primeiro Campo de Senha.">Senha:</label>
-                    <input onChange={(event) => {
-                        //Usa o react useState p/ guardar modificações no target desse input.
-                        //Senha do Login.
-                        setLoginPassword(event.target.value);
-                    } } type="password" class="form-control" id="senha1" placeholder="Sua senha" />
-                </div>
-            
-
-        {/////////////// BOTAO BASICO DE LOGOUT QUE DEPOIS SERA ADAPTADO//////////////////////////////
-        }
-        
-        {user? <img src={user.photoURL}/> :<img src={imguser}></img>}<br/>
-        <p>Nome:  {user?.displayName}<br/>
-        E-mail: {user?.email}<br/>
-        Data de criação:  {user?.creationTime}</p><br/>
-        <button type="button" class="btn btn-secondary">Mudar senha</button><br/>
-        <button type="button" onClick={logout} class="btn btn-danger">Sair</button><br/>
-        
-        </div>
-        </Stack></Container>
-            </>
-        
     );
     
 };

@@ -94,26 +94,28 @@ function Navbar() {
             </li>
           </ul>
 
-
+          {
+          user?
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle caret>{user? <img width="50" max-height="20" src={user.photoURL}/> :<img width="50" max-height="20" src={imguser}></img>}
-          {user?.email}</DropdownToggle>
+          <DropdownToggle caret> <p>{user?
+          user.email
+          :
+          "a"}</p> 
+          {user?
+          <img width="50" className='fotinha' max-height="20" src={user.photoURL}/> 
+          : 
+          <img className='fotinha' width="50" max-height="20" src={imguser}></img>
+          }
+          </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem disabled>Configurações</DropdownItem>
+            <Link  to='/Login'><DropdownItem>Configurações</DropdownItem></Link>
             <DropdownItem divider />
             <DropdownItem onClick={logout} >Sair</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-
-
-          {///Lucas Levi: Se ele nao conseguir ler o displayName e o email, vai dar erro, por isso constantemente perguntar se há .email e
-          ///.displayName pro codigo nao tentar ler um nulll
-          /// assim, se o Usuario deslogar, ele nao lê o null.
+          :
+          button && <Button buttonStyle='btn--outline'>ACESSAR</Button>
           }
-          {user?<Button>{<img height={300}  src={imguser}></img>,
-            user?.displayName,
-            user?.email
-          }</Button>:button && <Button buttonStyle='btn--outline'>ACESSAR</Button>}
         </div>  
       </nav>
     </>

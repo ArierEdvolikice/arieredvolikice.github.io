@@ -9,6 +9,9 @@
   top: 0;
   z-index: 999;
 }
+.fotinha{
+  border-radius: 60%;
+}
 
 .navbar-container {
   display: flex;
@@ -156,4 +159,5 @@
     color: #242424;
     transition: 250ms;
   }
+  
 }

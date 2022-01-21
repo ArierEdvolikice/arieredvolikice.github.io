@@ -55,9 +55,17 @@ const Projetos = ()=>{
         <div className="noticia"><h1>teste</h1>
             {todos.map((todo)=>(
                 <>
-                    <h1>{todo.todo}</h1>
-                    <button>update</button>
-                    <button>delete</button>
+                    {///Estrutura Básica de Tópicos.
+                    }
+                    <div className="noticia">
+                        <h1>{todo.todo}</h1>
+                        <div>
+                        <p>Lorem ipsum...</p><br/>
+                        <textarea placeholder="Deixar Comentário"></textarea><br/>
+                        <button>Comentar</button>
+                        </div>
+                    </div>
+                
                 </>
             ))}
         </div>
