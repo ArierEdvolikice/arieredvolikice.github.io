@@ -97,11 +97,11 @@ function Navbar() {
           {
           user?
           <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle caret> <p>{user?
-          user.email
+          <DropdownToggle caret> <p>{user.displayName?
+          user.displayName
           :
-          "a"}</p> 
-          {user?
+          user.email}</p> 
+          {user.photoURL?
           <img width="50" className='fotinha' max-height="20" src={user.photoURL}/> 
           : 
           <img className='fotinha' width="50" max-height="20" src={imguser}></img>

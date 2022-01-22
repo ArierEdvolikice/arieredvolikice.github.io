@@ -20,7 +20,7 @@ function Login(){
     //construtores
     const [registerEmail,setRegisterEmail] = useState("");
     const [registerPassword,setRegisterPassword] = useState("");
-
+    const [rememberme,setRememberme] = useState(true);
     const [loginEmail,setLoginEmail] = useState("");
     const [loginPassword,setLoginPassword] = useState("");
 
@@ -67,6 +67,11 @@ function Login(){
     const logout = async ()=>{
         await signOut(auth);
     };
+
+    const toggleCheckBox = () =>{
+        setRememberme(rememberme?!rememberme:rememberme);
+        console.log(rememberme);
+    }
     
     return(
     <><div className="pagdescription">
@@ -77,12 +82,13 @@ function Login(){
 
 
                 {user?
-                    <div id="painel_user">{user ? <img className='fotinha' src={user.photoURL} /> : <img src={imguser}></img>}<br />
-                    <p>Nome: {user?.displayName}<br />
+                    <div id="painel_user">{user.emailVerified ? <img className='fotinha' src={user.photoURL} /> : <img className='fotinha' height={100} src={imguser}></img>}<br />
+                    <p>Nome: {user?.displayName}
+                        {' (Novo Usuário) '}<br/>
                         E-mail: {user?.email}<br />
-                        Data de criação: {user?.creationTime}</p><br />
+                        Data de criação: {user.metadata?.creationTime}</p><br />
                     <button type="button" class="btn btn-secondary">Mudar senha</button><br />
-                    <button type="button" onClick={logout} class="btn btn-danger">Sair</button><br /></div>
+                    <button type="button" onClick={logout} class="btn btn-danger">Sair</button><br/></div>
                     :
                     <><p>{}</p><div id="login" class="form-group" classname="Área de E-mail."><h0>Faça Login:</h0><br />
                         <label for="inputEmailLogin" classname="Campo de E-mail.">Endereço de E-mail</label>
@@ -98,11 +104,17 @@ function Login(){
                                 //Senha do Login.
                                 setLoginPassword(event.target.value);
                             } } type="password" class="form-control" id="senha1" placeholder="Sua senha" />
+                            
+                            <label class="form-check-label" for="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" value={true}  onChange={toggleCheckBox}/>
+                               {} Lembrar senha ?</label><br/>
                             <button type="submit" onClick={login} class="btn btn-primary">Entrar</button>
                             <p>Ainda não possui conta?<button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Cadastre-se
                             </button></p><br />
                             <button onClick={() => { signInWithRedirect(auth, GoogleProvider); } }>Entrar com Google</button>
+                            <button onClick={() => { signInWithRedirect(auth, GoogleProvider); } }>Entrar com Facebook</button>
+
                         </div></>
                     
                     }
