@@ -19,10 +19,15 @@
 
     /** Centralizando a div ______________**/
     display:block;
-    width: 60%;
+    width: 20rem;
     margin: 10px auto 10px auto;
     /**____________________________ **/
 }
 .fotinha{
     border-radius: 50px;
 }
+
+
+
+
+

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-native-firebase/app": "^14.3.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -14,8 +15,9 @@
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
-    "react-bootstrap": "^2.0.3",
+    "react-bootstrap": "^2.1.2",
     "react-dom": "^17.0.2",
+    "react-font-size-changer": "^0.2.0",
     "react-router-dom": "^6.0.2",
     "react-scripts": "^5.0.0",
     "react-scroll": "^1.8.4",

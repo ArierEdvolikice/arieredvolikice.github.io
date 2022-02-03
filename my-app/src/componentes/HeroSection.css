@@ -9,27 +9,31 @@
   object-fit: contain;
 }
 
+.texto {
+  height: 100%;
+  background-color: RGB(9,87,183, 0.2);
+}
+
 .texto> h1 {
   color: #fff;
-  font-size: 100px;
+  font-size: 85px;
   margin-top: 11rem;
   text-align: center;
 }
 
 .texto > p {
-  color: #fff;
+  color: #f7f9ff;
   margin-top: 8px;
   font-size: 25px;
   text-align: justify;
   padding: 0px 6rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 @media screen and (max-width: 960px) {
 
   .texto> h1 {
     font-size: 4rem;
-    margin-top: 11rem;
+    margin-top: 9rem;
     text-align: center;
     word-break: break-all;
     padding: 0px 3rem;

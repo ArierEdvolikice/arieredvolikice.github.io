@@ -1,6 +1,6 @@
-.navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-  height: 80px;
+.navbar-er {
+  background: #256eff;
+  height: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: #f7f9ff;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -46,6 +46,7 @@
   width: 60vw;
   justify-content: end;
   margin-right: 2rem;
+  margin-bottom: 0;
 }
 
 .nav-item {
@@ -53,7 +54,7 @@
 }
 
 .nav-links {
-  color: #fff;
+  color: #f7f9ff;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -62,12 +63,13 @@
 }
 
 .nav-links:hover {
-  border-bottom: 4px solid #fff;
-  transition: all 0.2s ease-out;
+  border-bottom: 4px solid #f7f9ff;
+  transition: all 0.2s ease;
+  color: #f7f9ff;
 }
 
 .fa-bars {
-  color: #fff;
+  color: #f7f9ff;
 }
 
 .nav-links-mobile {
@@ -90,14 +92,15 @@
     width: 100%;
     height: 90vh;
     position: absolute;
-    top: 80px;
+    top: 92px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    padding-left: 0;
   }
 
   .nav-menu.active {
-    background: #242222;
+    background: #353a44;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -112,7 +115,7 @@
   }
 
   .nav-links:hover {
-    background-color: #fff;
+    background-color: #f7f9ff;
     color: #242424;
     border-radius: 0;
   }
@@ -135,7 +138,7 @@
   }
 
   .fa-times {
-    color: #fff;
+    color: #f7f9ff;
     font-size: 2rem;
   }
 
@@ -148,14 +151,14 @@
     text-decoration: none;
     font-size: 1.5rem;
     background-color: transparent;
-    color: #fff;
+    color: #f7f9ff;
     padding: 14px 20px;
-    border: 1px solid #fff;
+    border: 1px solid #f7f9ff;
     transition: all 0.3s ease-out;
   }
 
   .nav-links-mobile:hover {
-    background: #fff;
+    background: #f7f9ff;
     color: #242424;
     transition: 250ms;
   }
