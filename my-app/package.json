@@ -1,6 +1,7 @@
 {
   "name": "neoacessibilidade",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@react-native-firebase/app": "^14.3.0",
