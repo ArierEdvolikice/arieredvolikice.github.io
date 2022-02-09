@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7b59448a.css",
+    "main.js": "./static/js/main.31f63799.js",
+    "static/media/IMG_REUNIAO.jpg": "./static/media/IMG_REUNIAO.1e66548f169c34eb83e7.jpg",
+    "static/media/none.png": "./static/media/none.f29f0889975eb1aae63b.png",
+    "index.html": "./index.html",
+    "main.7b59448a.css.map": "./static/css/main.7b59448a.css.map",
+    "main.31f63799.js.map": "./static/js/main.31f63799.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b59448a.css",
+    "static/js/main.31f63799.js"
+  ]
+}
